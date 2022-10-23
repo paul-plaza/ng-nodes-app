@@ -1,0 +1,32 @@
+<form [formGroup]="form" autocomplete="off" (ngSubmit)="onSave()">
+    <div fxLayout="column" fxLayoutAlign="space-between stretch" fxLayoutGap="5">
+
+        <!-- header -->
+        <div fxFlex="5">
+            <h1>Configuración</h1>
+        </div>
+
+        <!-- formulario -->
+        <div fxFlex>
+            <h5>Configuracion servicio</h5>
+
+            <p>
+                <mat-form-field hintLabel="Max 500 caracteres" appearance="outline" class="w-100">
+                    <mat-label>Url servicio web</mat-label>
+                    <input formControlName="server" matInput #input maxlength="500"
+                        placeholder="Ejemplo: Resultado clave" />
+                    <mat-hint align="end">{{input.value.length || 0}}/500</mat-hint>
+                </mat-form-field>
+            </p>
+        </div>
+        <div fxFlex fxLayout="column" fxLayoutAlign="end end" fxLayoutGap="5">
+
+            <div fxLayout="row" fxLayoutGap="5" fxLayoutAlign="end center">
+                <mat-spinner *ngIf="isBusy" [diameter]="50" color="warn"></mat-spinner>
+                <button mat-raised-button type="button" (click)="onDefault()">Por Defecto</button>
+                <button mat-raised-button color="warn" type="submit">Aceptar</button>
+            </div>
+        </div>
+
+    </div>
+</form>

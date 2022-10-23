@@ -1,0 +1,38 @@
+<ng-select [items]="families" appearance="outline" placeholder="Selecciona una item" bindLabel="description"
+    bindValue="id" (change)="selectFamily($event)">
+</ng-select>
+<div class="container">
+
+    <div fxLayout="column" fxFill>
+        <!--Using items input-->
+
+        <ngx-graph class="chart-container" [curve]="curve" *ngIf="graph" [links]="graph.links" [nodes]="graph.nodes">
+            <!-- <ng-template #defsTemplate>
+                <svg:marker id="arrow" fill="#3CCFA0" viewBox="0 -5 10 10" refX="8" refY="0" markerWidth="4"
+                    markerHeight="4" orient="auto">
+                    <svg:path d="M0,-5L10,0L0,5" class="arrow-head" />
+                </svg:marker>
+            </ng-template>
+
+            <ng-template #linkTemplate let-link>
+                <svg:g class="edge">
+                    <svg:path class="line" stroke-width="4" marker-end="url(#arrow)"></svg:path>
+                    <svg:text class="edge-label" text-anchor="middle">
+
+                    </svg:text>
+                </svg:g>
+            </ng-template> -->
+
+            <ng-template #nodeTemplate let-node>
+                <svg:g class="node">
+                    <svg:foreignObject width="120" height="120">
+                        <xhtml:div xmlns="http://www.w3.org/1999/xhtml">
+                            <app-card-node [dataIn]="node"></app-card-node>
+                        </xhtml:div>
+                    </svg:foreignObject>
+                </svg:g>
+            </ng-template>
+        </ngx-graph>
+
+    </div>
+</div>

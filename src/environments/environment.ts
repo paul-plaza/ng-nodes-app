@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  service: "https://7a03d409-326b-4f45-baf1-220557402d84.mock.pstmn.io/"
 };
 
 /*

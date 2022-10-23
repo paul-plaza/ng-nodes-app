@@ -1,0 +1,31 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>
+      <mat-icon class="mr-1">account_tree</mat-icon>
+      <span>LoverSoft App</span>
+    </mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/home">
+        <mat-icon class="mr-1">share</mat-icon>Home
+      </a>
+      <a mat-list-item routerLink="/configuration">
+        <mat-icon class="mr-1">settings</mat-icon>Settings
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span *ngIf="isHandset$ | async">LoverSoft App</span>
+    </mat-toolbar>
+
+    <mat-card class="m-5" style="height: 80%;">
+      <router-outlet></router-outlet>
+    </mat-card>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

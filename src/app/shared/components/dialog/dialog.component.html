@@ -1,0 +1,30 @@
+<h2 mat-dialog-title>{{dialog.title}}</h2>
+<mat-dialog-content>
+  <div [innerHtml]="dialog.message"></div>
+
+  <ng-container *ngIf="dialog.type == 3">
+    <mat-form-field appearance="outline" class="w-100">
+      <mat-label>Observación</mat-label>
+      <input matInput placeholder="mínimo 5 caracteres" #input maxlength="500" [(ngModel)]="observation">
+      <mat-hint align="end">{{input.value.length || 0}}/100</mat-hint>
+    </mat-form-field>
+  </ng-container>
+
+
+</mat-dialog-content>
+<mat-dialog-actions align="end" *ngIf="dialog.type == 1;else templateName">
+  <button mat-button [mat-dialog-close]="false"> No</button>
+  <button mat-button [mat-dialog-close]="true" color="primary">Si</button>
+</mat-dialog-actions>
+<ng-template #templateName>
+  <mat-dialog-actions align="end">
+    <ng-container *ngIf="dialog.type == 3; else elseTemplate">
+      <button mat-button [mat-dialog-close]="false"> No</button>
+      <button mat-button [disabled]="observation.length <= 5" color="primary"
+        [mat-dialog-close]="observation">Si</button>
+    </ng-container>
+    <ng-template #elseTemplate>
+      <button mat-button mat-dialog-close color="primary"> Aceptar</button>
+    </ng-template>
+  </mat-dialog-actions>
+</ng-template>
