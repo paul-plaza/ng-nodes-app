@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  service: "https://7a03d409-326b-4f45-baf1-220557402d84.mock.pstmn.io/"
+  service: "https://9e4df070-87d4-40c2-b6e0-14e77f7d0540.mock.pstmn.io/"
 };
 
 /*
@@ -15,3 +15,6 @@ export const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
+
+// npx angular-cli-ghpages --dir=dist/loversoftapp
+// ng deploy --base-href=https://paul-plaza.github.io/ng-nodes-app/ --name=paul-plaza --email=pool.09pp@hotmail.com

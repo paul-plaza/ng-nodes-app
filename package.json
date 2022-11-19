@@ -43,6 +43,7 @@
     "@types/d3-timer": "^3.0.0",
     "@types/dagre": "^0.7.48",
     "@types/jasmine": "~4.0.0",
+    "angular-cli-ghpages": "^1.0.3",
     "jasmine-core": "~4.1.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",

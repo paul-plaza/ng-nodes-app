@@ -12,7 +12,6 @@ export class CardNodeComponent implements OnInit {
 
   ngOnInit(): void {
 
-    console.log(this.dataIn);
 
   }
 

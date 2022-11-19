@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  service: "https://7a03d409-326b-4f45-baf1-220557402d84.mock.pstmn.io/"
+  service: "https://9e4df070-87d4-40c2-b6e0-14e77f7d0540.mock.pstmn.io/"
 };

@@ -6,8 +6,9 @@
     <div fxLayout="column" fxFill>
         <!--Using items input-->
 
-        <ngx-graph class="chart-container" [curve]="curve" *ngIf="graph" [links]="graph.links" [nodes]="graph.nodes">
-            <!-- <ng-template #defsTemplate>
+        <ngx-graph class="chart-container" #myChart *ngIf="graph" [layout]="layout" [autoCenter]="true" [curve]="curve"
+            [links]="graph.links" [nodes]="graph.nodes">
+            <ng-template #defsTemplate>
                 <svg:marker id="arrow" fill="#3CCFA0" viewBox="0 -5 10 10" refX="8" refY="0" markerWidth="4"
                     markerHeight="4" orient="auto">
                     <svg:path d="M0,-5L10,0L0,5" class="arrow-head" />
@@ -21,11 +22,11 @@
 
                     </svg:text>
                 </svg:g>
-            </ng-template> -->
+            </ng-template>
 
             <ng-template #nodeTemplate let-node>
                 <svg:g class="node">
-                    <svg:foreignObject width="120" height="120">
+                    <svg:foreignObject width="150" height="100">
                         <xhtml:div xmlns="http://www.w3.org/1999/xhtml">
                             <app-card-node [dataIn]="node"></app-card-node>
                         </xhtml:div>

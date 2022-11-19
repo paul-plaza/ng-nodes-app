@@ -10,6 +10,7 @@ import { FamilyService } from 'src/app/services/family/family.service';
 import { HttpFactoryService } from 'src/app/shared/http-base-service';
 import { CardNodeComponent } from 'src/app/components/card-node/card-node.component';
 import { DialogAppModule } from 'src/app/shared/components/dialog/dialog.module';
+import { MatIconModule } from '@angular/material/icon';
 
 
 export const routes: Routes = [
@@ -30,7 +31,8 @@ export const routes: Routes = [
     NgSelectModule,
     FormsModule,
     FlexModule,
-    DialogAppModule
+    DialogAppModule,
+    MatIconModule
   ],
   providers: [
     HttpFactoryService,
