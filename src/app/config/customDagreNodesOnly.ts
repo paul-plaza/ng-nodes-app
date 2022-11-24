@@ -39,7 +39,7 @@ const EDGE_KEY_DELIM = '\x01';
 
 export class DagreNodesOnlyLayout implements Layout {
     defaultSettings: DagreNodesOnlySettings = {
-        orientation: Orientation.LEFT_TO_RIGHT,
+        orientation: Orientation.TOP_TO_BOTTOM,
         marginX: 20,
         marginY: 20,
         edgePadding: 100,
